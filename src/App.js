@@ -21,7 +21,7 @@ function App() {
         </button>
       </div>
       <AppointmentList />
-      {showAdd && <AddAppointment />}
+      {showAdd && <AddAppointment setShowAdd={setShowAdd} />}
     </div>
   );
 }
