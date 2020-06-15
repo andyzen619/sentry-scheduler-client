@@ -15,7 +15,7 @@ function App() {
       console.log("There was an error getting appointments.");
     });
 
-    if (query.data) {
+    if (query && query.data) {
       const newAppointmentList = [];
       query.data.forEach((appointment) => {
         newAppointmentList.push(appointment);
