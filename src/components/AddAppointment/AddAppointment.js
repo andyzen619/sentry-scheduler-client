@@ -5,7 +5,7 @@ import DoctorPicker from "./DoctorPicker";
 import TypePicker from "./TypePicker";
 import Axios from "axios";
 
-const AddAppointment = ({setShowAdd}) => {
+const AddAppointment = ({setShowAdd, setAppointmentList}) => {
   const [startDate, setStartDate] = useState(new Date());
   const [doctor, setDoctor] = useState("1");
   const [type, setType] = useState("1");
@@ -30,6 +30,7 @@ const AddAppointment = ({setShowAdd}) => {
           }}>Cancel</button>
           <button className="mx-4 bg-blue-500 p-2 rounded-md" onClick={() => {
             Axios.post("/appointments/add", {doctor, type, date: startDate, uid: "TEI2G2VXbuZqAHTqCRDOhnR6K852"})
+            setShowAdd(false)
           }}>Save</button>
         </div>
       </div>
