@@ -1,18 +1,8 @@
 import React, { useState } from "react";
+import {generateDoctor} from '../../helpers/index';
 
 const DoctorPicker = ({ doctor, setDoctor }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-
-  //Generates doctor name based on doctor code
-  const generateDoctor = () => {
-    switch (doctor) {
-      case "1":
-        return "Dr. Joe Exotic";
-      case "2":
-        return "Dr. Baskins";
-      default:
-    }
-  };
 
   return (
     <div className="relative">
@@ -23,7 +13,7 @@ const DoctorPicker = ({ doctor, setDoctor }) => {
           setShowDropdown(!showDropdown);
         }}
       >
-        <div className="bg-gray-400 p-2 rounded-lg">{generateDoctor()}</div>
+        <div className="bg-gray-400 p-2 rounded-lg">{generateDoctor(doctor)}</div>
       </div>
       {showDropdown && (
         <div className="absolute flex flex-col border-2 border-solid border-gray-100 p-2 rounded-md mt-2 shadow z-10 bg-white">
