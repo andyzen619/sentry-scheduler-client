@@ -52,7 +52,7 @@ const AddAppointment = ({ setShowAdd }) => {
               setShowAdd(false);
             }}
           >
-            Save
+            Add
           </button>
         </div>
       </div>
