@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {generateType} from '../../helpers/index';
+import { generateType } from "../../helpers/index";
+import dropDownArrow from './images/dropdown.png'
 
 const TypePicker = ({ type, setType }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -13,7 +14,12 @@ const TypePicker = ({ type, setType }) => {
           setShowDropdown(!showDropdown);
         }}
       >
-        <div className="bg-gray-400 p-2 rounded-lg">{generateType(type)}</div>
+        <div className="bg-gray-400 p-2 rounded-lg flex">
+          {generateType(type)}
+          <div className="flex flex-col justify-center m-2">
+            <img src={dropDownArrow} alt="dropDown" className="h-2" />
+          </div>
+        </div>
       </div>
       {showDropdown && (
         <div className="absolute flex flex-col border-2 border-solid border-gray-100 p-2 rounded-md mt-2 shadow z-10 bg-white">
